@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Admin Panel</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+   <div class="container">
+      <h1 class="text-center my-4">Admin Panel</h1>
+
+      <!-- Navigation for Admin Panel -->
+      <nav class="nav nav-pills flex-column flex-sm-row mb-4">
+         <a class="flex-sm-fill text-sm-center nav-link active" href="#projects" data-toggle="tab">Manage Projects</a>
+         <a class="flex-sm-fill text-sm-center nav-link" href="#clients" data-toggle="tab">Manage Clients</a>
+         <a class="flex-sm-fill text-sm-center nav-link" href="#contacts" data-toggle="tab">View Contacts</a>
+         <a class="flex-sm-fill text-sm-center nav-link" href="#subscribers" data-toggle="tab">View Subscribers</a>
+      </nav>
+
+      <!-- Tab Content for Different Sections -->
+      <div class="tab-content">
+         <!-- Projects Section -->
+         <div class="tab-pane fade show active" id="projects">
+            <h2>Projects</h2>
+            <form id="projectForm">
+               <div class="form-group">
+                  <label for="projectName">Project Name</label>
+                  <input type="text" class="form-control" id="projectName" name="project_name" required>
+               </div>
+               <div class="form-group">
+                  <label for="projectDescription">Description</label>
+                  <textarea class="form-control" id="projectDescription" name="project_description" required></textarea>
+               </div>
+               <div class="form-group">
+                  <label for="projectImage">Image URL</label>
+                  <input type="text" class="form-control" id="projectImage" name="project_pic" required>
+               </div>
+               <button type="submit" class="btn btn-primary">Add Project</button>
+            </form>
+            <hr>
+            <h3>Existing Projects</h3>
+            <ul id="projectList" class="list-group"></ul>
+         </div>
+
+         <!-- Clients Section -->
+         <div class="tab-pane fade" id="clients">
+            <h2>Clients</h2>
+            <form id="clientForm">
+               <div class="form-group">
+                  <label for="clientName">Client Name</label>
+                  <input type="text" class="form-control" id="clientName" name="client_name" required>
+               </div>
+               <div class="form-group">
+                  <label for="clientDescription">Description</label>
+                  <textarea class="form-control" id="clientDescription"  name="client_description"required></textarea>
+               </div>
+               <div class="form-group">
+                  <label for="clientImage">Image URL</label>
+                  <input type="text" class="form-control" id="clientImage" name="client_pic" required>
+               </div>
+               <button type="submit" class="btn btn-primary">Add Client</button>
+            </form>
+            <hr>
+            <h3>Existing Clients</h3>
+            <ul id="clientList" class="list-group"></ul>
+         </div>
+
+         <!-- Contacts Section -->
+         <div class="tab-pane fade" id="contacts">
+            <h2>Contact Submissions</h2>
+            <table class="table table-striped table-bordered">
+               <thead class="thead-dark">
+                  <tr>
+                     <th>Full Name</th>
+                     <th>Email</th>
+                     <th>Mobile</th>
+                     <th>City</th>
+                     <th>Date</th>
+                  </tr>
+               </thead>
+               <tbody id="contactList">
+                  <!-- Contact submissions will be populated here -->
+               </tbody>
+            </table>
+         </div>
+
+         <!-- Subscribers Section -->
+         <div class="tab-pane fade" id="subscribers">
+            <h2>Newsletter Subscribers</h2>
+            <table class="table table-striped table-bordered">
+               <thead class="thead-dark">
+                  <tr>
+                     <th>Email</th>
+                     <th>Subscribed Date</th>
+                  </tr>
+               </thead>
+               <tbody id="subscriberList">
+                  <!-- Subscriber data will be populated here -->
+               </tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <script src="../js/admin.js"></script>
+</body>
+</html>
